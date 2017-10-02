@@ -20,10 +20,12 @@
 			<tr>
 				<td><b>Độ Ẩm :</b></td>
 				<td><b>${doam} (%).</b></td>
-			</tr></table>
-			<form action="/den/1" method="get">
+			</tr>
+		</table>
+			<form action="/web/den/0" method="get">
+			    ${request.getParameter("")}
 			    <a><b>ĐÈN :</b></a>
-			    <button>ON</button>
+			    <button>OFF</button>
 			</form>		
 	</div>
 </body>
