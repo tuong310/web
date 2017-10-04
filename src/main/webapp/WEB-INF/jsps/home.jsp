@@ -12,19 +12,20 @@
 <body>
 	<h1>QUẢN LÝ LÒ ẤP TRỨNG</h1>
 	<div>
-		<table>
+		  <table>
 			<tr>
 				<td><b>Nhiệt Độ :</b></td>
 				<td><b> ${nhietdo} (&ordm;C).</b></td>
-			</tr>
+			</tr> 
 			<tr>
 				<td><b>Độ Ẩm :</b></td>
 				<td><b>${doam} (%).</b></td>
 			</tr></table>
-			<form action="/den/1" method="get">
-			    <a><b>ĐÈN :</b></a>
+			<form action="/web/den/1" method="get">
+			    <b>ĐÈN :</b><input type="hidden" name="den">
 			    <button>ON</button>
-			</form>		
+			</form>	
+			
 	</div>
 </body>
 </html>

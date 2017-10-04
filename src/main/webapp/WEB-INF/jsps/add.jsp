@@ -23,10 +23,9 @@
 			</tr>
 		</table>
 			<form action="/web/den/0" method="get">
-			    ${request.getParameter("")}
-			    <a><b>ĐÈN :</b></a>
+			     <b>ĐÈN :</b><input type="hidden" name="den">
 			    <button>OFF</button>
-			</form>		
+			</form>	
 	</div>
 </body>
 </html>

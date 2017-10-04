@@ -1,6 +1,8 @@
 package com.web.controller;
 
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -18,6 +20,8 @@ public class homeController extends AbstractDao {
     @Autowired
      cbService cbservice;
     
+    @Autowired 
+	HttpServletRequest Request ;
 	@RequestMapping(method = RequestMethod.GET)
 	public String home(ModelMap mm) {
 		cbmanufacture cb =  cbservice.getCB(1);
@@ -30,7 +34,9 @@ public class homeController extends AbstractDao {
 	@RequestMapping(value="den/1", method = RequestMethod.GET)
 	public String add(ModelMap mm) {
 		cbmanufacture cb =  cbservice.getCB(1);
-		mm.addAttribute("doam",cb.getDoAm());
+		// cb.setDoAm() = Request.getParameter("doam");
+		//cbservice.updateCB(1)= Request.getParameter("doam"));
+		mm.addAttribute("doam" ,Request.getParameter("doam"));
 		mm.addAttribute("nhietdo",cb.getNhietDo());
 		mm.addAttribute("dieukhien",cb.getDieuKhien());
 		return "add";
@@ -43,5 +49,10 @@ public class homeController extends AbstractDao {
 		mm.addAttribute("nhietdo",cb.getNhietDo());
 		mm.addAttribute("dieukhien",cb.getDieuKhien());
 		return "home";
+	}
+	@RequestMapping(value="Json",method = RequestMethod.GET)
+	public String Json(ModelMap mm) {
+		mm.addAttribute("doam" ,Request.getParameter("doam"));
+		return "json";
 	}
 }
